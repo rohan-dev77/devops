@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Attendance Form</title>
+</head>
+<body>
+<h2>Student Attendance</h2>
+<form th:action="@{/submit}" th:object="${attendance}" method="post">
+    Name:
+    <input type="text" th:field="*{studentName}" required><br><br>
+    Status:
+    <select th:field="*{status}">
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+    </select><br><br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
